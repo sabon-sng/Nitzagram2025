@@ -14,10 +14,12 @@ def main():
 
     # Set up background image
     background = pygame.image.load('Images/background.png')
-    background = pygame.transform.scale(background,
-                                        (WINDOW_WIDTH, WINDOW_HEIGHT))
+    background = pygame.transform.scale(background,(WINDOW_WIDTH, WINDOW_HEIGHT))
 
     # TODO: add a post here
+    img1 = pygame.image.load('Images/ronaldo.jpg')
+    img1 = pygame.transform.scale(img1,(0.87 * WINDOW_WIDTH, 0.41 * WINDOW_HEIGHT))
+
 
     running = True
     while running:
@@ -32,10 +34,12 @@ def main():
         screen.blit(background, (0, 0))
 
         # Update display - without input update everything
-        pygame.display.update()
+        screen.blit(img1, (0.064 * WINDOW_WIDTH, 0.2 * WINDOW_HEIGHT))
+        pygame.display.flip()
 
         # Set the clock tick to be 60 times per second. 60 frames for second.
         clock.tick(60)
+
     pygame.quit()
     quit()
 

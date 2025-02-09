@@ -8,17 +8,54 @@ class Post:
     """
     A class used to represent post on Nitzagram
     """
-    def __init__(self): #TODO: add parameters
+    def __init__(self,username,description,location,likes_counter,comments): #TODO: add parameters
+        def get_username():
+            self.username = username
+            return self.username
+
+        def get_description():
+            self.description = description
+            return self.description
+        def get_location():
+            self.location = location
+            return self.location
+        def get_likes_counter():
+            self.likes_counter = likes_counter
+            return self.likes_counter
+        def get_comments():
+            self.comments = comments
+            return self.comments
+
+        def display():
+            img1 = pygame.image.load('Images/ronaldo.jpg')
+            POST_WIDTH = 0.87 * WINDOW_WIDTH
+            POST_HEIGHT = 0.41 * WINDOW_HEIGHT
+            img1 = pygame.transform.scale(img1, (0.87 * WINDOW_WIDTH, 0.41 * WINDOW_HEIGHT))
+            screen.blit(img1, (0.87 * WINDOW_WIDTH, 0.41 * WINDOW_HEIGHT))
+
+
+
+
+
+
+
+
+
         #TODO: write me!
         pass
 
     def display(self):
+        img1 = pygame.image.load('Images/ronaldo.jpg')
+        img1 = pygame.transform.scale(img1, (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
+        screen.blit(img1, (WINDOW_WIDTH / 2, WINDOW_HEIGHT / 2))
+
         """
         Display the Post image/Text, description, location, likes and comments
         on screen
 
         :return: None
         """
+        return None
         # TODO: write me!
         pass
 
