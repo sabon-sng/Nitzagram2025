@@ -1,7 +1,6 @@
 import pygame
 from helpers import screen
-from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK
-
+from constants import WINDOW_WIDTH, WINDOW_HEIGHT, BLACK ,POST_Y_POS,POST_X_POS,POST_HEIGHT,POST_WIDTH
 
 def main():
     # Set up the game display, clock and headline
@@ -27,11 +26,12 @@ def main():
     clicks = len(image)
     running = True
     while running:
+        pos = pygame.mouse.get_pos()
         clicks = clicks % len(image)
         for event in pygame.event.get():
             if event.type==pygame.QUIT:
                 running = False
-            if event.type == pygame.MOUSEBUTTONDOWN:
+            if event.type == pygame.MOUSEBUTTONDOWN and pos[0] > (POST_X_POS) and pos[0] < (POST_X_POS +POST_WIDTH) and pos[1] > (POST_Y_POS) and pos[1] < (POST_Y_POS +POST_HEIGHT):
                 clicks += 1
                 clicks = clicks % len(image)
 
